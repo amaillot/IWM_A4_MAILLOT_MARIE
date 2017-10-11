@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Création de Sushi
                 <div class="pull-right">
-                <a href="{{ route('tasks.index') }}">--> Retour à la liste des tâches</a>
+                <a href="{{ route('item.index') }}">--> Retour à la liste des tâches</a>
                 </div>
                 </div>
 
@@ -21,7 +21,7 @@
                        </div>
                        <div class="form-group">
                            <label for="description">Description</label>
-                           <textarea class="form-control" placeholder='Description' name="description" id="description"></textarea>
+                           <textarea class="form-control" placeholder='Description' name="Description" id="description"></textarea>
                        </div>
                        <button type="submit" class="btn btn-default">Sauvegarder</button>
                        </div>
