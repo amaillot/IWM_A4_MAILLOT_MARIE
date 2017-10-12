@@ -1,29 +1,19 @@
-@extends('template.app')
+@extends('layouts.app')
 @section('content')
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Connexion</a>
-                        <a href="{{ route('register') }}">Inscription</a>
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Bonjour {{ $firstname }} 
+                    Bonjour  {{ Auth::user()->name }}
 <!--                    //recup variable-->
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://laravel.com/docs">Commander</a>
+                    -
+                    <a href="#">A propos de</a>
+                    -
+                    <a href="#">Contact</a>
+                    -
                 </div>
             </div>
         </div>
