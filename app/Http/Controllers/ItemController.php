@@ -16,18 +16,25 @@ class ItemController extends Controller
     {
         //
         $items = Item::all();
+        /*        dump($items);*/
+            return view('item.index', compact('items', 'selections'));
+    }
 
-/*        dump($items);*/
+    /**
+     * Get Ajax
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request)
+    {
 
-        $selections = [
-            'Burger',
-            'Sushi'
-        ];
+        $env = $request->request->get('env');
 
-        json_encode($selections);
+        $id = $request->request->get('id');
 
-        dump($selections);
-        return view('item.index', compact('items', 'selections'));
+        $nouvelItem = Item::find($id);
+
+        return response()->json(['success'=> compact('nouvelItem')]);
 
     }
 

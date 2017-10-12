@@ -16,7 +16,7 @@
                                     {{ $item->Nom }}, {{ $item->Description }},
                                     {{ $item->Prix }} euros
                                 </li>
-                                <button>Add</button>
+                                <button class="button" id="{{ $item->id }}">Add {{ $item->id }}</button>
                             @endforeach
                         </ul>
 
@@ -26,9 +26,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h1>Liste des produits sélectionnés</h1></div>
 
-                    <div class="panel-body">
-                        <p>{{ $selections[0] }}</p>
-                        <p>{{ $selections[1] }}</p>
+                    <div class="panel-body panel-selected">
+
+                    </div>
+                    <div class="panel-footer">
+                        Total : <p class="total">
+
+                        </p>
                     </div>
                 </div>
 

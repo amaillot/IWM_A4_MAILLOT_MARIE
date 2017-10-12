@@ -23,6 +23,8 @@ Route::get('/', function () {
 //Route::get('/tasks/{id}','TaskController@show');
 Route::resource('/tasks','TaskController');
 
+Route::get('/items/select', 'ItemController@add');
+
 Route::resource('/items', 'ItemController');
 
 Auth::routes();

@@ -21,3 +21,38 @@ const app = new Vue({
     el: '#app'
 });
 
+$( document ).ready(function() {
+
+    $(".button").click(function(e){
+        e.preventDefault();
+
+        /*var env = $("input[name=env]").val();*/
+
+        var env = "it works";
+
+        var TheId = $(this).attr('id');
+
+        $.ajax({
+            method:'GET',
+            url:'/items/select',
+            data:{
+                env:env,
+                _token:"{{ csrf_token() }}",
+                id : TheId
+            },
+            success:function(data){
+                console.log(data.success);
+                var nouvelItem = data.success.nouvelItem;
+                var total = data.success.prix;
+                $(".panel-selected").append(
+                    "<div><h3>"+nouvelItem.Nom+"</h3><p style='float: right;'>Prix : "+nouvelItem.Prix+"</p><button class='remove'>Remove</button></div>"
+                );
+            }
+        });
+    });
+
+    $("body").on('click', '.remove', function ()
+    {
+        $(this).parent().remove();
+    });
+});
