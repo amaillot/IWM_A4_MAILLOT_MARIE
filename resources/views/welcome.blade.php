@@ -3,7 +3,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Bonjour  {{ Auth::user()->name }}
+                   @guest
+                    Bonjour Invité
+                    @else
+                    Bonjour {{ Auth::user()->name }}
+                    @endguest
 <!--                    //recup variable-->
                 </div>
 
