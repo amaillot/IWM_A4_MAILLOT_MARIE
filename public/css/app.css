@@ -6,7 +6,7 @@ body {
   color: #636b6f;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -145,6 +145,72 @@ li.li_deco {
   color: orange !important;
   -webkit-transition: all 0.5s ease !important;
   transition: all 0.5s ease;
+}
+
+li.li_registrer {
+  border-right: 1Px solid black !important;
+}
+
+.logo {
+  background-image: url(/images/logo.png?f2099c559033a945251055ba980e39f6);
+  background-size: cover;
+  width: 40px;
+  height: 32px;
+  float: left;
+  margin-top: 8px;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.container-connexion {
+  padding-top: 120px;
+  background-image: url(/images/back_co.jpg?576e2d434eb55c305f97da93ea616055);
+  background-size: cover;
+  background-position: top;
+  width: 100% !important;
+  min-height: 100vh;
+}
+
+.container-connexion .row {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container-connexion .panel-default {
+  text-align: center;
+  color: black;
+  border: none;
+  -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container-connexion .panel-heading {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  font-size: 2em;
+}
+
+.container-connexion .form-horizontal .control-label {
+  padding-bottom: 15px;
+}
+
+.btn-primary {
+  border: none !important;
+  background-color: orange !important;
+  -webkit-transition: all 0.5s ease !important;
+  transition: all 0.5s ease;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  color: orange !important;
+  -webkit-transition: all 0.5s ease !important;
+  transition: all 0.5s ease;
+}
+
+input:-webkit-autofill {
+  background-color: #000 !important;
 }
 
 /*!
