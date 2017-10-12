@@ -17,8 +17,17 @@ class ItemController extends Controller
         //
         $items = Item::all();
 
+/*        dump($items);*/
 
-        return view('item.index', compact('items'));
+        $selections = [
+            'Burger',
+            'Sushi'
+        ];
+
+        json_encode($selections);
+
+        dump($selections);
+        return view('item.index', compact('items', 'selections'));
 
     }
 
@@ -40,8 +49,6 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $item = Item::create($request->all());
 
         return redirect()->route('items.index', $item->id);
