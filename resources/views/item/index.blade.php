@@ -2,7 +2,10 @@
 
 @section('content')
 
-    <div class="container">
+   @guest
+   CONNECTE TOI
+   @else
+    <div class="container container-list-product">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -13,10 +16,14 @@
                             @foreach ($items as $item)
                                 <li>
                                     <img src="{{ $item->Image }}" alt="" width="100px">
-                                    {{ $item->Nom }}, {{ $item->Description }},
-                                    {{ $item->Prix }} euros
+                                       <div class="detail_product">
+                                     <div class="nom_product">{{ $item->Nom }}</div> : <i>{{ $item->Description }}</i>
+                                    <div class="prix_product">{{ $item->Prix }} €</div>
+                                
+                                <button class="button" id="{{ $item->id }}">Ajouter</button>
+                                </div>
                                 </li>
-                                <button class="button" id="{{ $item->id }}">Add {{ $item->id }}</button>
+                                
                             @endforeach
                         </ul>
 
@@ -39,4 +46,5 @@
             </div>
         </div>
     </div>
+@endguest
 @endsection

@@ -213,6 +213,77 @@ input:-webkit-autofill {
   background-color: #000 !important;
 }
 
+.container-list-product {
+  padding-top: 20px;
+  background-image: url(/images/back_list.jpg?31a53cfe10ef2f0d6bc8a47a0bdcf1a9);
+  width: 100% !important;
+  min-height: 92vh;
+}
+
+.container-list-product .row {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-list-product .panel-heading {
+  text-align: center;
+}
+
+.container-list-product ul {
+  list-style: none;
+}
+
+.container-list-product ul li {
+  margin-bottom: 30px;
+}
+
+.container-list-product ul li img {
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.container-list-product ul li .detail_product {
+  margin-left: 15px;
+  display: inline-block;
+  width: 77%;
+  vertical-align: middle;
+}
+
+.container-list-product ul li .detail_product .nom_product {
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.container-list-product ul li .detail_product .prix_product {
+  float: right;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.container-list-product ul li .detail_product button {
+  margin-top: 10px;
+  border-radius: 15px;
+  /* border-color: white; */
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: orange;
+  /* -webkit-appearance: none; */
+  color: white;
+  padding-left: 10Px;
+  padding-right: 10px;
+  border: none;
+  display: block;
+  -webkit-transition: all 0.5s ease !important;
+  transition: all 0.5s ease;
+}
+
+.container-list-product ul li .detail_product button:hover {
+  -webkit-transition: all 0.5s ease !important;
+  transition: all 0.5s ease;
+  background-color: grey;
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.

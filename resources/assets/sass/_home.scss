@@ -64,7 +64,7 @@ body {
 }
 
 .links {
-    font-size:1.3em;
+    font-size: 1.3em;
     a {
         color: white;
         font-weight: inherit;
@@ -130,10 +130,10 @@ li.li_deco {
 
 .links a {
     -webkit-transition: all 0.5s ease!important;
-        -moz-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     &:hover {
         color: orange!important;
         -webkit-transition: all 0.5s ease!important;
@@ -144,70 +144,139 @@ li.li_deco {
     }
 }
 
-li.li_registrer{
+li.li_registrer {
     border-right: 1Px solid black!important;
 }
 
 .logo {
-	background-image: url(../images/logo.png);
-    background-size:cover;
-        width: 40px;
+    background-image: url(../images/logo.png);
+    background-size: cover;
+    width: 40px;
     height: 32px;
-        float: left;
+    float: left;
     margin-top: 8px;
     margin-right: 20px;
     display: inline-block;
 }
 
-.container-connexion{
+.container-connexion {
     padding-top: 120px;
     background-image: url(../images/back_co.jpg);
-    background-size:cover;
+    background-size: cover;
     background-position: top;
     width: 100%!important;
-    min-height: 100vh;;
-    
-    .row{
-    width: 70%;
-    margin: 0 auto;
+    min-height: 100vh;
+    .row {
+        width: 70%;
+        margin: 0 auto;
     }
-    
-    .panel-default{
+    .panel-default {
         text-align: center;
         color: black;
         border: none;
         box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
     }
-    
-    .panel-heading{
+    .panel-heading {
         text-align: center;
-    font-weight: bold;
-    color: black;
-    font-size: 2em;
+        font-weight: bold;
+        color: black;
+        font-size: 2em;
     }
-    
-    .form-horizontal .control-label{
+    .form-horizontal .control-label {
         padding-bottom: 15px;
     }
 }
 
-.btn-primary{
+.btn-primary {
     border: none!important;
- background-color: orange!important;
+    background-color: orange!important;
     -webkit-transition: all 0.5s ease!important;
-        -moz-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;   
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
-.btn-link:hover, .btn-link:focus{
+.btn-link:hover,
+.btn-link:focus {
     color: orange!important;
     -webkit-transition: all 0.5s ease!important;
-        -moz-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
-input:-webkit-autofill { background-color: #000 !important; }
+input:-webkit-autofill {
+    background-color: #000 !important;
+}
+
+.container-list-product {
+    padding-top: 20px;
+    background-image: url(../images/back_list.jpg);
+
+
+    width: 100%!important;
+    min-height: 92vh;
+    .row {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .panel-heading {
+        text-align: center;
+    }
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 30px;
+            img {
+                border-radius: 30px;
+                display: inline-block;
+            }
+            .detail_product {
+                margin-left: 15px;
+                display: inline-block;
+                width: 77%;
+                vertical-align: middle;
+                .nom_product {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+                .prix_product {
+                   
+                    float: right;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+                button {
+                    margin-top: 10px;
+                    border-radius: 15px;
+                    /* border-color: white; */
+                    box-shadow: none;
+                    background-color: orange;
+                    /* -webkit-appearance: none; */
+                    color: white;
+                    padding-left: 10Px;
+                    padding-right: 10px;
+                    border: none;
+                    display: block;
+                    -webkit-transition: all 0.5s ease!important;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+                    
+                    &:hover{
+                        -webkit-transition: all 0.5s ease!important;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+                        background-color:grey;
+                    }
+                }
+            }
+        }
+    }
+}
