@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Commander</a>
+                    <a href="/items">Commander</a>
                     -
                     <a href="#">A propos de</a>
                     -
