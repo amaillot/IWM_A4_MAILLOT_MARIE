@@ -40,6 +40,7 @@
                                        <div class="detail_product">
                                      <div class="nom_product">{{ $item->Nom }}</div> : <i>{{ $item->Description }}</i>
                                     <div class="prix_product">{{ $item->Prix }} €</div>
+                                 
                                       <button class="button" id="{{$item->id}}">Ajouter</button>
                                        </div>
                                        
