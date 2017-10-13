@@ -21,6 +21,22 @@ class ItemController extends Controller
     }
 
     /**
+     * Filtre
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function filter($filtre)
+    {
+
+        $itemsFiltre = Item::find($filtre);
+
+        dump($itemsFiltre);
+
+        return view('item.index', compact('itemsFiltre'));
+
+    }
+
+    /**
      * Get Ajax
      *
      * @return \Illuminate\Http\Response
@@ -45,7 +61,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('item.create');
+        $items = Item::all();
+        return view('item.create', compact('items'));
     }
 
     /**

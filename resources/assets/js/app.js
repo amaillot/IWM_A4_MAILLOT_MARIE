@@ -55,4 +55,14 @@ $( document ).ready(function() {
     {
         $(this).parent().remove();
     });
+    $(".button-filter").click(function () {
+        console.log($(this).text());
+        var type = $(this).text();
+        $(".item").fadeOut(100);
+        $("."+type).delay(150).fadeIn();
+    })
+    $(".button-filter-all").click(function () {
+        $(".item").fadeOut(100);
+        $(".item").delay(150).fadeIn();
+    })
 });

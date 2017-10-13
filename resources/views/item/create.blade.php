@@ -33,8 +33,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="Filtre">type de produit</label>
-                                <input class="form-control" placeholder="Type de produit" name="Filtre" id="Filtre">
+                                <select id="select" class="form-control" name="Filtre">
+                                    <option value="Dessert">Dessert</option>
+                                    <option value="Plat" selected>Plat</option>
+                                    <option value="Entree">Entree</option>
+                                    <option value="Boisson">Boisson</option>
+                                </select>
                             </div>
+
                             <button type="submit" class="btn btn-default">Sauvegarder</button>
                     </div>
                     </form>

@@ -30,3 +30,5 @@ Route::resource('/items', 'ItemController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/items/{filtre}', 'ItemController@filter')->name('filtre');
