@@ -19,7 +19,6 @@
                                 <button class="button" id="{{ $item->id }}">Add {{ $item->id }}</button>
                             @endforeach
                         </ul>
-
                     </div>
                 </div>
 
