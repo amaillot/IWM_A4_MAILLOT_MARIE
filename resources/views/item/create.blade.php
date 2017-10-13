@@ -31,6 +31,10 @@
                                 <label for="Image">Image</label>
                                 <textarea class="form-control" placeholder="Lien de l'image" name="Image" id="Image"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="Filtre">type de produit</label>
+                                <input class="form-control" placeholder="Type de produit" name="Filtre" id="Filtre">
+                            </div>
                             <button type="submit" class="btn btn-default">Sauvegarder</button>
                     </div>
                     </form>
