@@ -3,7 +3,19 @@
 @section('content')
 
    @guest
-   CONNECTE TOI
+   <div class="container alert_connexion">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h3>
+                    Veuillez vous connecter pour pouvoir commander.
+                    </h3>
+                    </div>
+                </div>
+            </div>
+       </div>            
+    </div>            
    @else
     <div class="container container-list-product">
         <div class="row">
@@ -33,11 +45,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h1>Liste des produits sélectionnés</h1></div>
 
-                    <div class="panel-body panel-selected">
-
+                    <div class="panel-body panel-selected product_list_choice">
+                    <p class="no_item">Aucun Item ajouté à la liste</p>
                     </div>
                     <div class="panel-footer">
-                        Total : <p class="total">
+                        <p class="nom_total">Total :</p> <p class="total">
 
                         </p>
                     </div>
