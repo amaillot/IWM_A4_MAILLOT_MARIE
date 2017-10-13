@@ -48,7 +48,7 @@
                             <li><a href="{{ route('login') }}">Connexion</a></li>
                             <li class="li_registrer"><a href="{{ route('register') }}">Inscription</a></li>
                         @else
-                           <li> <a href="{{ url('/home') }}">Home</a></li>
+                           <li> <a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ url('/items') }}">Commander</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
