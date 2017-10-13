@@ -15,8 +15,12 @@ const app = new Vue({
     el: '#app'
 });
 $(document).ready(function () {
+    var cpt = 0;
     $(".button").click(function (e) {
         e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.product_list_choice').offset().top
+        }, 'slow');
         /*var env = $("input[name=env]").val();*/
         var env = "it works";
         var TheId = $(this).attr('id');
@@ -37,10 +41,12 @@ $(document).ready(function () {
                 var total = 0;
                 $('.prix_val').each(function () {
                     total += parseFloat($(this).html());
-                    $('.panel-footer .total').html(total + '€'); // Or this.innerHTML, this.innerText
+                    $('.panel-footer .total').html(total + '€');
+                    $('.qty_total').html('Quantité : ' + cpt);
                 });
             }
         });
+        cpt++
     });
     $("body").on('click', '.remove', function () {
         $(this).parent().remove();
@@ -48,18 +54,19 @@ $(document).ready(function () {
         $('.prix_val').each(function () {
             total += parseFloat($(this).html());
             $('.panel-footer .total').html(total + '€');
- 
         });
         if (total == 0) {
             $('.panel-footer .total').html(total + '€');
             $('.no_item').show();
         }
+        cpt--
+        $('.qty_total').html('Quantité : ' + cpt);
     });
     $(".button-filter").click(function () {
         console.log($(this).text());
         var type = $(this).text();
         $(".item").fadeOut(100);
-        $("."+type).delay(150).fadeIn();
+        $("." + type).delay(150).fadeIn();
     })
     $(".button-filter-all").click(function () {
         $(".item").fadeOut(100);

@@ -1,0 +1,62 @@
+.container-connexion {
+    padding-top: 120px;
+    background-image: url(../images/back_co.jpg);
+    background-size: cover;
+    background-position: top;
+    width: 100%!important;
+    min-height: 100vh;
+    .row {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .panel-default {
+        text-align: center;
+        color: black;
+        border: none;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    }
+    .panel-heading {
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-size: 2em;
+    }
+    .form-horizontal .control-label {
+        padding-bottom: 15px;
+    }
+}
+
+.btn-primary {
+    border: none!important;
+    background-color: orange!important;
+    -webkit-transition: all 0.5s ease!important;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    color: orange!important;
+    -webkit-transition: all 0.5s ease!important;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+input:-webkit-autofill {
+    background-color: #000 !important;
+}
+
+.alert_connexion {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    padding-top: 220px;
+    background-image: url(../images/back_alert_co.jpg);
+    background-size: cover;
+    width: 100%!important;
+    min-height: 92vh;
+}

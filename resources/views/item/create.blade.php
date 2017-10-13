@@ -1,15 +1,36 @@
 @extends('layouts.app')
 
-@section('content')
 
-    <div class="container">
+
+
+@section('content')
+   @guest
+   <div class="container alert_connexion">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Création de Sushi
-                        <div class="pull-right">
-                            <a href="{{ route('items.index') }}">--> Retour à la liste des produits</a>
+                    <div class="panel-heading">
+                    <h3>
+                    Veuillez vous connecter pour pouvoir accèder à cette page.
+                    </h3>
+                    </div>
+                </div>
+            </div>
+       </div>            
+    </div>            
+   @else
+    
+    <?php if(auth()->user()->role != 0){ ?>
+
+    <div class="container container-create-product">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                   <div class="pull-right">
+                            <a class="link_route" href="{{ route('items.index') }}">&rarr; Retour à la liste des produits &larr;</a>
                         </div>
+                    <div class="panel-heading">Création de produits
+                        
                     </div>
 
                     <div class="panel-body">
@@ -49,4 +70,23 @@
         </div>
     </div>
     </div>
+<?php    
+}
+else{
+    echo('<div class="container alert_connexion">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    <h3>
+                    Vous devez être administrateur pour pouvoir accèder à cette page.
+                    </h3>
+                    </div>
+                </div>
+            </div>
+       </div>            
+    </div>');
+};
+?>
+@endguest    
 @endsection
