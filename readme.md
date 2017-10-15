@@ -14,7 +14,7 @@
 
 L'application possède 2 comptes :
 - Role Admin (Pour créer des produits) :
-Compte : alexandratobia@gmail.com <br>
+Compte : alexandretobia@gmail.com <br>
 Mot de Passe : laravelinit
 
 - Role User
