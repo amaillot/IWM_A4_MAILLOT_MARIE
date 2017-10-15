@@ -1,0 +1,44 @@
+@media screen and (max-width:640px){
+    .container-list-product .row{
+        width: 100%;
+        
+        ul{
+            padding-left: 0px;
+            text-align: center;
+            
+            img{
+                margin-bottom: 20px;
+            }
+            
+            .prix_product{
+                float: inherit!important;
+            }
+            
+            button{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+            }
+        }
+    }
+
+
+.title.m-b-md{
+    font-size: 50px;
+}
+
+.links a{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.container-create-product .row, .container-connexion .row {
+    width: 100%;
+}
+
+.container-connexion, .container-create-product, .container-list-product {
+        padding-top: 80px;
+}
+
+    }

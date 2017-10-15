@@ -797,8 +797,13 @@ var app = new Vue({
     el: '#app'
 });
 $(document).ready(function () {
+    var tab_item = [];
+    var cpt = 0;
     $(".button").click(function (e) {
         e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $('.product_list_choice').offset().top
+        }, 'slow');
         /*var env = $("input[name=env]").val();*/
         var env = "it works";
         var TheId = $(this).attr('id');
@@ -814,15 +819,55 @@ $(document).ready(function () {
                 //                console.log(data.success);
                 var nouvelItem = data.success.nouvelItem;
                 var total = data.success.prix;
-                $(".panel-selected ").append("<div class='item_list_product'><h3>" + nouvelItem.Nom + "</h3><div style='display:inline-block;float: right;'><div class='list_prix'>Prix :</div> <div class='prix_val'>" + nouvelItem.Prix + "</div>€</div><button class='remove'>Remove</button></div>");
+
+                //                tab_item.push( nouvelItem.Nom);
+                //      
+                //                var nom_serch = nouvelItem.Nom;
+                //                for(var i= 0; i < tab_item.length; i++){
+                //                    
+                //                           if(tab_item[i] != nom_serch){
+                //                               console.clear();
+                //                               console.log('différent');
+                //                           }
+                //                           else{
+                //                                var correct_number_text = $(this).parent().find('.qty_product .number_product').text();
+                //                        var correct_number = (Number(correct_number_text) + 1);
+                //                        $(this).parent().find('.qty_product .number_product').text(correct_number);
+                //                           }
+                //       
+                //                    };
+
+                $(".panel-selected ").append("<div class='item_list_product'><h3>" + nouvelItem.Nom + "</h3><div style='display:inline-block;float: right;'><div class='list_prix'>Prix :</div> <div class='prix_val'>" + nouvelItem.Prix + "</div>€</div><div class='qty_product'>Quantité : <div style='display:inline-block;' class='number_product'>1</div> </div><button class='remove'>Remove</button></div>");
+                //                $('.item_list_product h3').each(function(){
+                //
+                //                    if ($(this).text() === nouvelItem.Nom) {
+                //                        
+                //                        var correct_number_text = $(this).parent().find('.qty_product .number_product').text();
+                //                        var correct_number = (Number(correct_number_text) + 1);
+                //                        $(this).parent().find('.qty_product .number_product').text(correct_number);
+                //                        
+                //                    }
+                //
+                //                    if ($(this).text() != nouvelItem.Nom) {
+                //                        
+                //                        $(".panel-selected ").append("<div class='item_list_product'><h3>" + nouvelItem.Nom + "</h3><div style='display:inline-block;float: right;'><div class='list_prix'>Prix :</div> <div class='prix_val'>" + nouvelItem.Prix + "</div>€</div><div class='qty_product'>Quantité : <div style='display:inline-block;' class='number_product'>1</div> </div><button class='remove'>Remove</button></div>");
+                //                    }
+                //                });
+                //                
+                //                if ($('.item_list_product h3').length === 0) {
+                //                    $(".panel-selected ").append("<div class='item_list_product'><h3>" + nouvelItem.Nom + "</h3><div style='display:inline-block;float: right;'><div class='list_prix'>Prix :</div> <div class='prix_val'>" + nouvelItem.Prix + "</div>€</div><div class='qty_product'>Quantité : <div style='display:inline-block;' class='number_product'>1</div> </div><button class='remove'>Remove</button></div>");
+                //                }
+
                 $('.no_item').hide();
                 var total = 0;
                 $('.prix_val').each(function () {
                     total += parseFloat($(this).html());
-                    $('.panel-footer .total').html(total + '€'); // Or this.innerHTML, this.innerText
+                    $('.panel-footer .total').html(total + '€');
+                    $('.qty_total').html('Quantité : ' + cpt);
                 });
             }
         });
+        cpt++;
     });
     $("body").on('click', '.remove', function () {
         $(this).parent().remove();
@@ -835,6 +880,8 @@ $(document).ready(function () {
             $('.panel-footer .total').html(total + '€');
             $('.no_item').show();
         }
+        cpt--;
+        $('.qty_total').html('Quantité : ' + cpt);
     });
     $(".button-filter").click(function () {
         console.log($(this).text());
@@ -41943,8 +41990,6 @@ var normalizeComponent = __webpack_require__(37)
 var __vue_script__ = __webpack_require__(38)
 /* template */
 var __vue_template__ = __webpack_require__(39)
-/* template functional */
-  var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = null
 /* scopeId */
@@ -41954,13 +41999,13 @@ var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __vue_script__,
   __vue_template__,
-  __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/Example.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -41987,14 +42032,12 @@ module.exports = Component.exports
 
 /* globals __VUE_SSR_CONTEXT__ */
 
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
 
 module.exports = function normalizeComponent (
   rawScriptExports,
   compiledTemplate,
-  functionalTemplate,
   injectStyles,
   scopeId,
   moduleIdentifier /* server only */
@@ -42018,12 +42061,6 @@ module.exports = function normalizeComponent (
   if (compiledTemplate) {
     options.render = compiledTemplate.render
     options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
   }
 
   // scopedId
@@ -42064,7 +42101,6 @@ module.exports = function normalizeComponent (
     var existing = functional
       ? options.render
       : options.beforeCreate
-
     if (!functional) {
       // inject component registration as beforeCreate hook
       options.beforeCreate = existing
@@ -42155,7 +42191,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4b11e239", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4b11e239", module.exports)
   }
 }
 
