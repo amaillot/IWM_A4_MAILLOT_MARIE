@@ -797,6 +797,7 @@ var app = new Vue({
     el: '#app'
 });
 $(document).ready(function () {
+    var tab_item = [];
     var cpt = 0;
     $(".button").click(function (e) {
         e.preventDefault();
@@ -818,16 +819,44 @@ $(document).ready(function () {
                 //                console.log(data.success);
                 var nouvelItem = data.success.nouvelItem;
                 var total = data.success.prix;
-                //                $('.item_list_product h3').each(function () {
-                //                    if ($(this).text() == nouvelItem.Nom) {
-                //                        var correct_number_text = $(this).parent().find('.qty_product .number_product').text()
-                //                        var correct_number = (Number(correct_number_text) + 1)
-                //                        $(this).parent().find('.qty_product .number_product').text(correct_number);
-                //                    }
-                //                     });
 
-                console.log('test');
+                //                tab_item.push( nouvelItem.Nom);
+                //      
+                //                var nom_serch = nouvelItem.Nom;
+                //                for(var i= 0; i < tab_item.length; i++){
+                //                    
+                //                           if(tab_item[i] != nom_serch){
+                //                               console.clear();
+                //                               console.log('différent');
+                //                           }
+                //                           else{
+                //                                var correct_number_text = $(this).parent().find('.qty_product .number_product').text();
+                //                        var correct_number = (Number(correct_number_text) + 1);
+                //                        $(this).parent().find('.qty_product .number_product').text(correct_number);
+                //                           }
+                //       
+                //                    };
+
                 $(".panel-selected ").append("<div class='item_list_product'><h3>" + nouvelItem.Nom + "</h3><div style='display:inline-block;float: right;'><div class='list_prix'>Prix :</div> <div class='prix_val'>" + nouvelItem.Prix + "</div>€</div><div class='qty_product'>Quantité : <div style='display:inline-block;' class='number_product'>1</div> </div><button class='remove'>Remove</button></div>");
+                //                $('.item_list_product h3').each(function(){
+                //
+                //                    if ($(this).text() === nouvelItem.Nom) {
+                //                        
+                //                        var correct_number_text = $(this).parent().find('.qty_product .number_product').text();
+                //                        var correct_number = (Number(correct_number_text) + 1);
+                //                        $(this).parent().find('.qty_product .number_product').text(correct_number);
+                //                        
+                //                    }
+                //
+                //                    if ($(this).text() != nouvelItem.Nom) {
+                //                        
+                //                        $(".panel-selected ").append("<div class='item_list_product'><h3>" + nouvelItem.Nom + "</h3><div style='display:inline-block;float: right;'><div class='list_prix'>Prix :</div> <div class='prix_val'>" + nouvelItem.Prix + "</div>€</div><div class='qty_product'>Quantité : <div style='display:inline-block;' class='number_product'>1</div> </div><button class='remove'>Remove</button></div>");
+                //                    }
+                //                });
+                //                
+                //                if ($('.item_list_product h3').length === 0) {
+                //                    $(".panel-selected ").append("<div class='item_list_product'><h3>" + nouvelItem.Nom + "</h3><div style='display:inline-block;float: right;'><div class='list_prix'>Prix :</div> <div class='prix_val'>" + nouvelItem.Prix + "</div>€</div><div class='qty_product'>Quantité : <div style='display:inline-block;' class='number_product'>1</div> </div><button class='remove'>Remove</button></div>");
+                //                }
 
                 $('.no_item').hide();
                 var total = 0;
