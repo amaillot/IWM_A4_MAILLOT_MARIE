@@ -33,6 +33,7 @@
                     </div>
                     <div class="panel-body">
                         <ul>
+
                             @foreach ($items as $item)
                                 <li class="item {{ $item->Filtre }}">
                                     <img src="{{asset( $item->Image )}}" alt="" width="100px">
