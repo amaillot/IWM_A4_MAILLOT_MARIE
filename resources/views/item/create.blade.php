@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <form method="POST" action="{{ route('items.store') }}">
+                        <form enctype="multipart/form-data" method="POST" action="{{ route('items.store') }}">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="Nom">Titre</label>
@@ -27,10 +27,12 @@
                                 <label for="Prix">Prix</label>
                                 <input class="form-control" type="number" placeholder='Prix' name="Prix" id="Prix">
                             </div>
+
                             <div class="form-group">
                                 <label for="Image">Image</label>
-                                <textarea class="form-control" placeholder="Lien de l'image" name="Image" id="Image"></textarea>
+                                <input type="file" class="form-control" placeholder="Lien de l'image" name="Image" id="Image">
                             </div>
+
                             <div class="form-group">
                                 <label for="Filtre">type de produit</label>
                                 <select id="select" class="form-control" name="Filtre">

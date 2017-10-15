@@ -18,6 +18,7 @@
     </div>            
    @else
     <div class="container container-list-product">
+        <img src="{{asset('images/file.jpg')}}" width="400px" alt="">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -31,10 +32,12 @@
                         <ul>
                             @foreach ($items as $item)
                                 <li class="item {{ $item->Filtre }}">
-                                    <img src="{{ $item->Image }}" alt="" width="100px">
+                                    <img src="{{asset( $item->Image )}}" alt="" width="100px">
                                        <div class="detail_product">
-                                     <div class="nom_product">{{ $item->Nom }}</div> : <i>{{ $item->Description }}</i>
-                                    <div class="prix_product">{{ $item->Prix }} €</div>
+                                           <p>{{ $item->Image }}</p>
+                                            <div class="nom_product">{{ $item->Nom }}</div> : <i>{{ $item->Description }}</i>
+                                            <div class="prix_product">{{ $item->Prix }} €</div>
+                                           <button class="button" id="{{ $item->id }}">Ajouter</button>
                                        </div>
                                 </li>
                             @endforeach

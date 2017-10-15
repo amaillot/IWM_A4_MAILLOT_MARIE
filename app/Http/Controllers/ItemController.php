@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Image;
+
 
 class ItemController extends Controller
 {
@@ -16,6 +19,7 @@ class ItemController extends Controller
     {
         //
         $items = Item::all();
+
         /*        dump($items);*/
             return view('item.index', compact('items', 'selections'));
     }
@@ -73,9 +77,21 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        $item = Item::create($request->all());
+        if ($request->hasFile('Image')) {
+            $char = 'abcdefghijklmnopqrstuvwxyz0123456789';
+            $newfilename = str_shuffle($char).'.jpg';
 
-        return redirect()->route('items.index', $item->id);
+            $request->file('Image')->move(public_path("/images"), $newfilename);
+
+            $item = (new Item())->fill($request->all());
+            $path = 'images/' . $newfilename;
+            $item->Image = $path;
+            $item->save();
+
+            return redirect()->route('items.index', $item->id);
+        }
+
+
     }
 
     /**
