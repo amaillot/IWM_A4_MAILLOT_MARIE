@@ -5,6 +5,7 @@
 #Après l'installation de laravel : 
 
 - Copier/coller le .env.example et créer un .env avec sa propre configuration
+- Lancer la commande php artisan key:generate
 
 #Commande essentielles pour la BDD
 - php artisan migrate  
